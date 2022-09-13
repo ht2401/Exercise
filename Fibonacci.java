@@ -7,7 +7,11 @@ public class Fibonacci {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of Fibonacci numbers : ");
         int inputNumber = scanner.nextInt();
-        System.out.println();
+        while (inputNumber < 2) {
+            System.out.println("Invalid input!");
+            System.out.println(" Enter the number of Fibonacci numbers : ");
+            inputNumber = scanner.nextInt();
+        }
         int[] fibonacci = new int[inputNumber];
 
         fibonacci[0] = 1;
@@ -15,7 +19,7 @@ public class Fibonacci {
         for (int i = 2; i < inputNumber; i++) {
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
         }
-        System.out.println(inputNumber + " the first number of the sequence is : ");
+        System.out.println("The first " + inputNumber + " digits of the fibonacci sequence are : ");
         for (int n : fibonacci) {
             System.out.print(n + "\t");
         }
